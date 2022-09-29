@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
+    path('hola/', views.hola),
+    path('fecha/', views.fecha),
+    path('fecha-nac/<int:edad>', views.calcular_fecha_nac),
+    path('mi-template/', views.mi_template),
+    path('mi-template/<str:nombre>', views.tu_template),
+    path('prueba-template/', views.prueba_template),
+    path('ver-personas/', views.ver_personas),
+    path('crear-persona/<str:nombre>/<str:apellido>/', views.crear_persona),
+    path('crear-familiar/', views.crear_familiar),
+    path('ver-familiares/', views.ver_familiares),
     path('admin/', admin.site.urls),
 ]
